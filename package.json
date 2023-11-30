@@ -1,0 +1,32 @@
+{
+  "name": "dynonary-apis",
+  "version": "1.0.0",
+  "description": "EngloLearn - Free web app to learn english",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js --inspect",
+    "test": "SET NODE_ENV=production&&node index.js"
+  },
+  "author": "LCN",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.26.0",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "google-auth-library": "^9.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.14",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.6.3",
+    "passport": "^0.4.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
