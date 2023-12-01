@@ -37,26 +37,9 @@ if (!dev) {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/src/build', 'index.html'));
   });
-
-  // Auto wake up heroku
-  // app.get('/apis/wakeup-heroku', (req, res) => res.send('ok'));
-  // const timer = 25 * 60 * 1000; // 25 minutes
-  // setInterval(() => {
-  //   https.get('https://dynonary.herokuapp.com/apis/wakeup-heroku');
-  // }, timer);
 } else {
   app.use(morgan('dev'));
 }
-
-// ================== Connect mongodb with mongoose ==================
-const mongoose = require('mongoose');
-const MONGO_URL = dev ? process.env.MONGO_URL_LOCAL : process.env.MONGO_URL;
-
-mongoose.connect(MONGO_URL, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true,
-});
 
 // ================== config ==================
 app.use(express.json({ limit: MAX.SIZE_JSON_REQUEST }));
@@ -68,6 +51,9 @@ app.use(cors(corsConfig));
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT} !!`);
 });
+
+// init db
+require('./src/dbs/init.mongodb');
 
 // ================== Apis ==================
 const BASE_URL = '/apis';
