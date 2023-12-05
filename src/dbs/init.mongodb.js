@@ -24,7 +24,7 @@ class Database {
             useNewUrlParser: true,
             useCreateIndex: true,
         })
-        .then( _ => console.log(`Connected to MongoDb`, countConnect(), checkOverload()))
+        .then( _ => console.log(`Connected to MongoDb`, countConnect() ))
         .catch( err => console.log(`Error Connect`))
     }
 
