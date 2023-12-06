@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 const { db: { connectionString } } = require('../configs/config.mongodb')
-const { countConnect, checkOverload } = require('../helper/check.connect')
+const { countConnect } = require('../helper/check.connect')
 
 console.log("🚀 ~ file: init.mongodb.js:5 ~ connectionString:", connectionString);
 
